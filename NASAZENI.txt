@@ -1,0 +1,10 @@
+ASTERION – TESTOVACÍ STATICKÉ NASAZENÍ
+
+Obsah složky nahrajte a rozbalte například jako /asterion-test/.
+Úvodní stránka je index.html; aplikace nepotřebuje PHP ani databázi.
+
+Soubor robots.txt záměrně zakazuje indexaci testovací kopie. Před ostrým
+nasazením jej nahraďte běžnými pravidly produkčního webu.
+
+Původní Contao nemažte. Pro návrat stačí obnovit původní DocumentRoot nebo
+původní index.php. Databáze Contaa se tímto balíčkem vůbec nemění.
