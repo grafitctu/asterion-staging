@@ -169,15 +169,14 @@
         <span><a href="#/dech-draka?tag=tematick%C3%BD%20%C4%8Dl%C3%A1nek"><strong>${stats.dech_draka_thematic_articles}</strong> tematických článků</a></span>
       </p>
       <div class="quick-sections">
-        <section><h2><a href="#/materials">Materiály ke stažení</a></h2><p>Jeden katalog místo nepřehledné soustavy složek. Lze hledat podle názvu, typu, tématu i původu.</p></section>
-        <section><h2><a href="#/dech-draka">Co vyšlo v Dechu draka</a></h2><p>Historicky smysluplná skupina zůstává zachována a je dostupná samostatně.</p></section>
-        <section><h2><a href="#/modules">Herní moduly</a></h2><p>Rozcestník modulů propojuje původní články s příslušnými mapami, dobrodružstvími a pravidly.</p></section>
-        <section><h2><a href="#/archive">Archiv původního webu</a></h2><p>Text starých stránek je zachován, ale už není svázán s historickou administrací Contaa.</p></section>
+        <section><h2><a href="#/materials">Materiály ke stažení</a></h2><p>Mapy, dobrodružství, pravidlové aplikace, články a další herní materiály.</p></section>
+        <section><h2><a href="#/dech-draka">Co vyšlo v Dechu draka</a></h2><p>Povídky, dobrodružství, postavy, bestiář a tematické články.</p></section>
+        <section><h2><a href="#/modules">Herní moduly</a></h2><p>Popisy modulů, aplikace pravidel, doplňky, mapy a dobrodružství.</p></section>
+        <section><h2><a href="#/archive">Archiv článků</a></h2><p>Články z webu a časopisů, profily autorů a další texty o Asterionu.</p></section>
       </div>
       ${historicalHome ? `
         <section class="homepage-history" aria-labelledby="homepage-history-title">
-          <h2 id="homepage-history-title">Zachovaná titulní strana původního webu</h2>
-          <p class="homepage-history-note">Následující příspěvky zůstávají v původním pořadí jako kronika Asterionu. Odkazy a obrázky jsou převedené do bezpečné místní kopie.</p>
+          <h2 id="homepage-history-title">Z titulní strany Asterionu</h2>
           <div class="legacy-content homepage-history-content">${historicalHome}</div>
         </section>` : ""}`;
   }
@@ -204,15 +203,15 @@
   function catalogPreset(path) {
     const presets = {
       "dech-draka": { title: "Co vyšlo v Dechu draka", group: "Dech draka", intro: "Historická skupina článků a příloh publikovaných v časopisu Dech draka." },
-      "maps": { title: "Mapy", group: "Mapy", intro: "Mapy a plánky jsou rozdělené podle použití; pracovní čísla a interní poznámky v názvech jsou odstraněné." },
+      "maps": { title: "Mapy", group: "Mapy", intro: "Mapy světa, jednotlivých oblastí, měst, podzemí a dobrodružství." },
       "adventures": { title: "Dobrodružství", group: "", contentKind: "adventure", intro: "Samostatná dobrodružství pro vypravěče bez ohledu na to, zda původně vyšla na webu, v Dechu draka nebo jako doplněk modulu." },
       "rules": { title: "Aplikace pravidel", group: "Aplikace pravidel", intro: "Pravidlové převody, tabulky a další herní pomůcky pro různé systémy." },
-      "indexes": { title: "Rejstříky a databáze", group: "Rejstříky a databáze", intro: "Stažené pracovní rejstříky Asterionu a otevřená evidence dohledaných i dosud chybějících pramenů." },
+      "indexes": { title: "Rejstříky a databáze", group: "Rejstříky a databáze", intro: "Rejstříky, databáze a přehledy asterionských pramenů." },
       "archive/dech-draka": { title: "Články v časopise Dech draka", group: "Dech draka", intro: "Povídky, články, dobrodružství a herní materiály, které vyšly v časopise Dech draka.", legacy: [["Původní stránka Dech draka", "dech-draka"], ["Starší přehled podle čísel", "dech-draka-79"], ["Původní společný rozcestník článků", "clanky-v-casopisech"]] },
       "archive/alduron": { title: "Články v časopise Alduron", group: "Alduron", intro: "Dochované články o Asterionu publikované v časopise Alduron.", legacy: [["Původní stránka časopisu Alduron", "alduron"]] },
       "archive/legenda": { title: "Články v časopise Legenda", group: "Legenda", intro: "Dochované části článku o Asterionu publikovaného v časopise Legenda.", legacy: [["Původní stránka časopisu Legenda", "legenda"]] }
     };
-    return presets[path] || { title: "Materiály ke stažení", group: "", intro: "Sjednocený katalog veřejných souborů a užitečných položek nalezených ve správci souborů Contaa." };
+    return presets[path] || { title: "Materiály ke stažení", group: "", intro: "Mapy, dobrodružství, pravidlové aplikace, články a další materiály pro hru na Asterionu." };
   }
 
   function renderSourceRegister() {
@@ -273,7 +272,7 @@
         <a href="#/adventures"><strong>Dobrodružství</strong><span>${data.stats.adventures_total || 0} připravených scénářů</span></a>
         <a href="#/maps"><strong>Mapy</strong><span>${countGroup("Mapy")} map a plánků</span></a>
         <a href="#/rules"><strong>Aplikace pravidel</strong><span>${countGroup("Aplikace pravidel")} souborů</span></a>
-        <a href="#/indexes"><strong>Rejstříky a databáze</strong><span>${countGroup("Rejstříky a databáze")} stažené soubory</span></a>
+        <a href="#/indexes"><strong>Rejstříky a databáze</strong><span>${countGroup("Rejstříky a databáze")} soubory</span></a>
         <a href="#/materials?group=${encodeURIComponent("Vaše tvorba")}"><strong>Vaše tvorba</strong><span>${countGroup("Vaše tvorba")} příspěvků</span></a>
       </nav>` : "";
 
@@ -571,7 +570,7 @@
 
     main.innerHTML = `
       <h1>Aplikace pravidel</h1>
-      <p>Nejprve jsou řazeny podle herního systému a uvnitř podle jednotlivých modulů. Staré pracovní názvy z InDesignu jsou nahrazené veřejnými názvy dokumentů.</p>
+      <p>Pravidlové aplikace pro DrD 1.6, Dračí hlídku, DrD II, DrD+ a další herní systémy.</p>
       ${sections}`;
   }
 
@@ -632,7 +631,7 @@
     }).join("");
     main.innerHTML = `
       <h1>Herní moduly</h1>
-      <p>Přehled modulů propojuje zachované popisy, související soubory a přímo dostupné aplikace pravidel.</p>
+      <p>Základní a rozšiřující moduly Asterionu, jejich doplňky a pravidlové aplikace.</p>
       <p class="store-overview"><a href="https://www.imago.cz/asterion-moduly" target="_blank" rel="noopener noreferrer">Aktuální nabídka asterionských modulů na Imagu</a></p>
       <div class="module-list">${rows}</div>`;
   }
@@ -690,7 +689,7 @@
       const href = safeHref(item.href);
       return `<figure class="gallery-item"><a href="${escapeHtml(href)}"><img src="${escapeHtml(href)}" alt="${escapeHtml(item.title)}" loading="lazy"></a><figcaption>${escapeHtml(item.title)}<br><span class="meta">${escapeHtml(item.group)}</span></figcaption></figure>`;
     }).join("");
-    main.innerHTML = `<h1>Galerie a obrazový archiv</h1><p>Zobrazeno ${Math.min(150, images.length)} z ${images.length} dohledaných obrazových souborů. Další položky lze zvolit podle skupiny v <a href="#/materials">katalogu materiálů</a>.</p><div class="gallery-grid">${figures}</div>`;
+    main.innerHTML = `<h1>Galerie a obrazový archiv</h1><p>Obálky knih a modulů, ilustrace, fotografie a další obrazové materiály. Zobrazeno ${Math.min(150, images.length)} z ${images.length} položek.</p><div class="gallery-grid">${figures}</div>`;
   }
 
   function archivePageList(pages, summaries) {
@@ -715,7 +714,7 @@
     const sections = Object.keys(groups).sort(function (a, b) { return a.localeCompare(b, "cs"); }).map(function (group) {
       return `<section class="archive-group"><h2>${escapeHtml(group)}</h2>${archivePageList(groups[group], true)}</section>`;
     }).join("");
-    main.innerHTML = `<p class="archive-back"><a href="#/archive">← Zpět na rozcestník archivu</a></p><h1>Ostatní články a stránky</h1><p>Obecné texty o Asterionu, staré rozcestníky, galerie a další obsah, který nepatří k časopisům, profilům autorů ani jednotlivým modulům.</p>${sections || '<p class="empty-result">Nebyly nalezeny žádné stránky.</p>'}`;
+    main.innerHTML = `<p class="archive-back"><a href="#/archive">← Zpět na rozcestník archivu</a></p><h1>Ostatní články a stránky</h1><p>Webové články, starší rozcestníky, zápisy z her a galerie.</p>${sections || '<p class="empty-result">Nebyly nalezeny žádné stránky.</p>'}`;
   }
 
   function renderArchive(path, query) {
@@ -739,7 +738,7 @@
     }).join("");
     main.innerHTML = `
       <h1>Archiv článků</h1>
-      <p>Archiv je rozdělen podle původu textů. Časopisecké články už nejsou promíchané s podstránkami herních modulů. Přehled a profily tvůrců jsou dostupné přímo jako <a href="#/page/autori">Všichni autoři</a>.</p>
+      <p>Články z časopisů Dech draka, Alduron a Legenda, webové texty a <a href="#/page/autori">profily autorů</a>.</p>
       <div class="archive-index">
         <section class="archive-card">
           <h2>Články v časopisech</h2>
@@ -751,7 +750,7 @@
         </section>
         <section class="archive-card module-archive-note">
           <h2>Podstránky herních modulů</h2>
-          <p>V tomto archivu se už neopakují. Zůstávají dostupné v samostatné sekci <a href="#/modules">Herní moduly</a>.</p>
+          <p>Najdete je v samostatné sekci <a href="#/modules">Herní moduly</a>.</p>
         </section>
       </div>`;
   }
@@ -768,8 +767,8 @@
     const publicationOverview = isPublicationsPage ? renderPublicationOverview() : "";
     const legacyHeading = isPublicationsPage ? '<h2 class="legacy-section-title">Herní moduly</h2>' : "";
     const sourceNote = isPublicationsPage
-      ? `Knižní část je doplněná z místní zálohy a vydavatelských záznamů · <a href="${escapeHtml(page.original)}" target="_blank" rel="noopener noreferrer">původní přehled modulů</a>`
-      : `Zachovaný obsah původní stránky · <a href="${escapeHtml(page.original)}" target="_blank" rel="noopener noreferrer">veřejný originál</a>`;
+      ? `<a href="${escapeHtml(page.original)}" target="_blank" rel="noopener noreferrer">Původní přehled herních modulů na asterionrpg.cz</a>`
+      : `<a href="${escapeHtml(page.original)}" target="_blank" rel="noopener noreferrer">Původní stránka na asterionrpg.cz</a>`;
     main.innerHTML = `<article class="legacy-page" data-page="${escapeHtml(page.slug)}"><h1>${escapeHtml(page.title)}</h1><p class="source-note">${sourceNote}</p>${publicationOverview}${legacyHeading}<div class="legacy-content">${page.html}</div></article>`;
     if (isPublicationsPage) enhanceLegacyModuleTables(main.querySelector(".legacy-content"));
   }
@@ -817,7 +816,7 @@
 
   function renderRoute() {
     if (!data) {
-      main.innerHTML = '<p class="error-message">Nepodařilo se načíst lokální datový soubor.</p>';
+      main.innerHTML = '<p class="error-message">Nepodařilo se načíst obsah webu.</p>';
       return;
     }
     const route = routeInfo();

@@ -277,11 +277,6 @@ button:hover {
   width: 100%;
 }
 
-.archive-note {
-  color: #444;
-  font-size: 12px;
-}
-
 .right-panel {
   margin-bottom: 22px;
 }
@@ -412,11 +407,6 @@ button:hover {
   margin-top: 28px;
   padding-top: 10px;
   border-top: 2px solid #777;
-}
-
-.homepage-history-note {
-  margin-bottom: 18px;
-  color: var(--muted);
 }
 
 .homepage-history-content .ce_text {
@@ -1160,12 +1150,10 @@ html[data-theme="dark"] .error-message {
   background: #090909;
 }
 
-html[data-theme="dark"] .archive-note,
 html[data-theme="dark"] .control-grid label,
 html[data-theme="dark"] .material-row .file-info,
 html[data-theme="dark"] .tags,
-html[data-theme="dark"] .archive-list small,
-html[data-theme="dark"] footer {
+html[data-theme="dark"] .archive-list small {
   color: #aaa;
 }
 
